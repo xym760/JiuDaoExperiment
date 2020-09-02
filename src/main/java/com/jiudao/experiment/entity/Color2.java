@@ -71,5 +71,6 @@ public enum Color2 {
         System.out.println("B:"+Color2.Blue.getInfo());//B:美国队长
     }
 
+    //冲突测试
 
 }
