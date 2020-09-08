@@ -64,7 +64,9 @@ public enum Operation {
         for (Operation op : Operation.values()) {
             System.out.printf("%f %s %f = %f%n", x, op, y, op.apply(x, y));
         }
-public enum Operation {
+    }
+}
+enum Operation1 {
     PLUS, MINUS, TIMES, DIVIDE;
 
     // 这种方法不能保证添加
