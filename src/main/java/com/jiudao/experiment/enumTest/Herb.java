@@ -1,6 +1,8 @@
 package com.jiudao.experiment.enumTest;
 
+import java.util.EnumMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Herb {
@@ -36,5 +38,15 @@ public class Herb {
         for(int i=0;i<herbsByType.length;i++) {
             System.out.printf("%s: %s%n", Herb.Type.values()[i], herbsByType[i]);
         }
+
+        //更好的实现
+        Map<Herb.Type, Set<Herb>> herbsByType1 = new EnumMap<Type, Set<Herb>>(Herb.Type.class);
+        for (Herb.Type t : Herb.Type.values()) {
+            herbsByType1.put(t , new HashSet<Herb>());
+        }
+        for(Herb h : garden) {
+            herbsByType1.get(h.type).add(h);
+        }
+        System.out.println(herbsByType1);
     }
 }
